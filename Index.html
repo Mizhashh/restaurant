@@ -6,129 +6,196 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <section class="mainmenu">
-            <nav>
-                <ul id="mainUl">
-                    <div class="logo"><a href="#" id="logo"><img src="logo.png" alt="логотип"></a></div>
-                    <li><a href="#" target="_blanc" id="main">ГЛАВНАЯ</a></li>
-                    <li><a href="#" target="_blanc" id="sofit">SOFIT EVENT HOUSE</a></li>
-                    <li><a href="#" target="_blanc" id="font">МЕРОПРИЯТИЯ</a></li>
-                    <li><a href="#" target="_blanc" id="font">ТУРИСТАМ</a></li>
-                    <li><a href="#" target="_blanc" id="font">КЕЙТЕРИНГ</a></li>
-                    <li><a href="#" target="_blanc" id="font">ДЛЯ АГЕНТОВ</a></li>
-                    <div class="navicon"><a href="#"><img src="navicon.png" height="30px" alt="навикон"></a></div>
-                </ul>
-            </nav>
-        </section>
-    </header>
-    <main class="rectangle">
-                <div class="container1"> <img src="Rectangle1.png" width="400px" height="450px" alt="корпоративы фото">
-                <div class="logoRec1">
-                <div class="logoRec1-1"><a href="#" target="_blanc" id="Corp">КОРПОРАТИВЫ</a>
-                <p>Отметьте лучший праздник<br /> в лучшем дворце Петербурга!</p></div>
-            </div>
-            </div>
+<header>
+    <!--
+      header это как бы и есть section только для шапки
+      нет смысла в этой  <section class="mainmenu"> обертке содержимого
+    -->
+    <section class="mainmenu">
+        <nav>
+            <ul id="mainUl">
+                <!--
+                   1.  Логотип это как правило не часть меню, не стоит это объединять в nav теге
+                   2.  вообще элемент для списков ul не должен содержать что-то кроме li тегов
+                   3. очень сложная структура для логотипа, ему будет достаточно быть <a href="#" class="logo"><img src="logo.png" alt="логотип"></a>
+                   4. id="logo" - id лучше использовать только для связки с js, если элемент уникальный, для стилизации только классы
+                -->
+                <div class="logo">
+                    <a href="#" id="logo">
+                        <img src="logo.png" alt="логотип">
+                    </a>
+                </div>
+                <!--
+                    1. снова лишнии id
+                    2. текст лучше делать прописным через css
+                    3. _blanc - ошибка, правильно _blank
+                -->
+                <li><a href="#" target="_blanc" id="main">ГЛАВНАЯ</a></li>
+                <li><a href="#" target="_blanc" id="sofit">SOFIT EVENT HOUSE</a></li>
+                <li><a href="#" target="_blanc" id="font">МЕРОПРИЯТИЯ</a></li>
+                <li><a href="#" target="_blanc" id="font">ТУРИСТАМ</a></li>
+                <li><a href="#" target="_blanc" id="font">КЕЙТЕРИНГ</a></li>
+                <li><a href="#" target="_blanc" id="font">ДЛЯ АГЕНТОВ</a></li>
+                <!--
+                    1. div в ul не должно быть
+                    2. хм, элемент похож на мобильное меню
+                -->
+                <div class="navicon">
+                    <a href="#">
+                        <img src="navicon.png" height="30px" alt="навикон">
+                    </a>
+                </div>
+            </ul>
+        </nav>
+    </section>
+</header>
+<!--
+  main держит весь контент сайта
+  обычно в простой разметке используют
+  header - шапка
+  main - основной контент
+  footer - подвал сайта
 
-            <div class="container2"> <img src="Rectangle2.png" width="400px" height="450px" alt="корпоративы фото">
-                <div class="logoRec2">
-                <div class="logoRec2-2"><a href="#" target="_blanc" id="Married">СВАДЬБЫ</a>
-                <p>Отметьте лучший праздник<br /> в лучшем дворце Петербурга!</p></div>
-            </div>
-            </div>
 
-            <div class="container3"> <img src="Rectangle3.png" width="400px" height="450px" alt="корпоративы фото">
-                <div class="logoRec3">
-                <div class="logoRec3-3"><a href="#" target="_blanc" id="Evening">ЗВАНЫЕ ВЕЧЕРА</a>
-                <p>Отметьте лучший праздник<br /> в лучшем дворце Петербурга!</p></div>
+  в main как раз помещают section блоки, чтобы добавить больше семантики
+-->
+<main class="rectangle">
+    <div class="container1">
+        <!--    картинкам тоже задают классы чтобы не писать inline стили  width="400px" height="450px"      -->
+        <img src="Rectangle1.png" width="400px" height="450px" alt="корпоративы фото">
+        <div class="logoRec1">
+            <div class="logoRec1-1">
+                <a href="#" target="_blanc" id="Corp">КОРПОРАТИВЫ</a>
+                <p>Отметьте лучший праздник<br/> в лучшем дворце Петербурга!</p>
             </div>
-            </div>
-    </main>
-    <div class="aboutUs"> <h4>О РЕСТОРАНЕ</h4>
-        <div class="logoAbout"><a href="#"><img src="summerPalace.png" height="50px"  alt="логотип"></a></div>
-        <p>ЛЕТНИЙ ДВОРЕЦ</p>
-        <div class="rectangleBorder">
+        </div>
+    </div>
+    <!--  Старайся отбивать элементы табуляцией, чтобы была видна вложенность, так код легче читается и воспринимается   -->
+    <div class="container2"><img src="Rectangle2.png" width="400px" height="450px" alt="корпоративы фото">
+        <div class="logoRec2">
+            <div class="logoRec2-2"><a href="#" target="_blanc" id="Married">СВАДЬБЫ</a>
+                <p>Отметьте лучший праздник<br/> в лучшем дворце Петербурга!</p></div>
+        </div>
+    </div>
+
+    <div class="container3"><img src="Rectangle3.png" width="400px" height="450px" alt="корпоративы фото">
+        <div class="logoRec3">
+            <div class="logoRec3-3"><a href="#" target="_blanc" id="Evening">ЗВАНЫЕ ВЕЧЕРА</a>
+                <p>Отметьте лучший праздник<br/> в лучшем дворце Петербурга!</p></div>
+        </div>
+    </div>
+</main>
+<div class="aboutUs"><h4>О РЕСТОРАНЕ</h4>
+    <div class="logoAbout">
+        <a href="#">
+            <img src="summerPalace.png" height="50px" alt="логотип">
+        </a>
+    </div>
+    <p>ЛЕТНИЙ ДВОРЕЦ</p>
+    <div class="rectangleBorder">
         <div class="video"><a href="#"></a><img src="video.png" height="479px" width="920px"></div>
-        
+
         <div class="aboutBg">
             <div class="mainLogo"><img src="logo.png" alt="логотип"></div>
-            <div class="indent"><img src="summerPalace.png" width="43px" height="37px"><p>ПЛОЩАДКА</p><p id="textContent">Сочетание классических интерьеров и современных технических возможностей выгодно отличают Летний Дворец от большинства других исторических площадок города.</p></div>
-            <div class="interior"><img src="interior.png" width="39px" height="20px"><p>ИНТЕРЬЕРЫ</p><p id="textContent">Изысканное внутреннее убранство Летнего Дворца — тонко выполненная стилизация с использованием традиционных технологий и материалов — мрамора, бронзового литья.</p></div>
+            <div class="indent"><img src="summerPalace.png" width="43px" height="37px">
+                <p>ПЛОЩАДКА</p>
+                <p id="textContent">Сочетание классических интерьеров и современных технических возможностей выгодно
+                    отличают Летний Дворец от большинства других исторических площадок города.</p></div>
+            <div class="interior"><img src="interior.png" width="39px" height="20px">
+                <p>ИНТЕРЬЕРЫ</p>
+                <p id="textContent">Изысканное внутреннее убранство Летнего Дворца — тонко выполненная стилизация с
+                    использованием традиционных технологий и материалов — мрамора, бронзового литья.</p></div>
         </div>
         <div class="aboutBg-2">
-        <div class="welcome"><p>Добро пожаловать в Летний Дворец! 
-            <br /><br />
-            Всего в 12 километрах от Петербурга, неподалеку от знаменитых фонтанов и парков Петергофа воплощен в жизнь один из самых грандиозных проектов event-индустрии России – ресторанный комплекс «Летний Дворец». Открытый в 2009 году, он объединил под одной крышей современный банкетный зал в исторических дворцовых интерьерах на 800 гостей и собственный кейтеринг.</p></div>
-            <div class="techno"><img src="technology.png" width="43px" height="37px"><p>ТЕХНОЛОГИИ</p><p id="textContent-2">Возможности «Летнего Дворца» практически безграничны с точки зрения проведения мероприятий самого разного формата и масштаба.</p></div>
-            <div class="equipment"><img src="equipment.png" width="43px" height="37px"><p>ОБОРУДОВАНИЕ</p><p id="textContent-2">Установлен комплект самого современного звукового оборудования, который приятно удивит даже знатока качественного звука.</p></div>
+            <div class="welcome"><p>Добро пожаловать в Летний Дворец!
+                <br/><br/>
+                Всего в 12 километрах от Петербурга, неподалеку от знаменитых фонтанов и парков Петергофа воплощен в
+                жизнь один из самых грандиозных проектов event-индустрии России – ресторанный комплекс «Летний Дворец».
+                Открытый в 2009 году, он объединил под одной крышей современный банкетный зал в исторических дворцовых
+                интерьерах на 800 гостей и собственный кейтеринг.</p></div>
+            <div class="techno"><img src="technology.png" width="43px" height="37px">
+                <p>ТЕХНОЛОГИИ</p>
+                <p id="textContent-2">Возможности «Летнего Дворца» практически безграничны с точки зрения проведения
+                    мероприятий самого разного формата и масштаба.</p></div>
+            <div class="equipment"><img src="equipment.png" width="43px" height="37px">
+                <p>ОБОРУДОВАНИЕ</p>
+                <p id="textContent-2">Установлен комплект самого современного звукового оборудования, который приятно
+                    удивит даже знатока качественного звука.</p></div>
+        </div>
     </div>
-</div>
 </div>
 <div class="gallery">
-<div class="textGallery"> ГАЛЕРЕЯ 
-   <div class="galleryLogo"><img src="summerPalace.png" height="30px" width="46"  alt="логотип"></div>
-   <div><p>ЛЕТНИЙ ДВОРЕЦ</p></div>
-</div>
+    <div class="textGallery"> ГАЛЕРЕЯ
+        <div class="galleryLogo"><img src="summerPalace.png" height="30px" width="46" alt="логотип"></div>
+        <div><p>ЛЕТНИЙ ДВОРЕЦ</p></div>
+    </div>
 
-   <div class="gallery-1"><img src="gallery-1.png" width="340px" height="210px"></div>
- <div class="gallery-2"><img src="gallery-2.png" width="250px" height="210px"></div>
- <div class="gallery-2-2">
-<div class="gallery-3"> <img src="gallery-3.png" width="455px" height="440px"></div>
-<div class="gallery-4"><img src="gallery-5.png" width="340px" height="210px"> </div>
-<div class="gallery-5"><img src="gallery-4.png" width="340px" height="210px"> </div>
-</div>
+    <div class="gallery-1"><img src="gallery-1.png" width="340px" height="210px"></div>
+    <div class="gallery-2"><img src="gallery-2.png" width="250px" height="210px"></div>
+    <div class="gallery-2-2">
+        <div class="gallery-3"><img src="gallery-3.png" width="455px" height="440px"></div>
+        <div class="gallery-4"><img src="gallery-5.png" width="340px" height="210px"></div>
+        <div class="gallery-5"><img src="gallery-4.png" width="340px" height="210px"></div>
+    </div>
 </div>
 <div class="findBlock">
-<div class="findout"><img src="findout.png" width="100%" height="259px"><p>УЗНАЙТЕ О НАС БОЛЬШЕ</p></div>
-<div class="findDow"><p>СКАЧАТЬ ПЛАН</p></div>
-<div class="presentation"><p>СКАЧАТЬ ПРЕЗЕНТАЦИЮ</p></div>
+    <div class="findout"><img src="findout.png" width="100%" height="259px">
+        <p>УЗНАЙТЕ О НАС БОЛЬШЕ</p></div>
+    <div class="findDow"><p>СКАЧАТЬ ПЛАН</p></div>
+    <div class="presentation"><p>СКАЧАТЬ ПРЕЗЕНТАЦИЮ</p></div>
 </div>
 
-<div class="connect">ХОТИТЕ ПРОВЕСТИ <br /> МЕРОПРИЯТИЕ?
-<form id="connectForm" action="#" method="post">
-    <input id="formConnectName" type="text" placeholder="Ваше имя" required>
-    <input id="formConnect" type="email" placeholder="Ваш e-mail">
+<div class="connect">ХОТИТЕ ПРОВЕСТИ <br/> МЕРОПРИЯТИЕ?
+    <form id="connectForm" action="#" method="post">
+        <input id="formConnectName" type="text" placeholder="Ваше имя" required>
+        <input id="formConnect" type="email" placeholder="Ваш e-mail">
 </div>
-<div class="connect-2"><p>Или у вас остались вопросы, на которые мы сможем вам ответить 
-        в процессе разговора - напишите нам. Мы открыты для диалога!</p>
+<div class="connect-2"><p>Или у вас остались вопросы, на которые мы сможем вам ответить
+    в процессе разговора - напишите нам. Мы открыты для диалога!</p>
     <textarea id="formText" type="text" placeholder="Сообщение" required></textarea>
-</form>
+    </form>
     <div class="navigation">
         <span class="navigationText">РЕСТОРАН</span>
-    <div class="navigationItem"><img src="navigation-1.png" width="25px" height="30px"><p>Санкт-Петербургское <br /> шоссе, д 130, к. 7</p>
-    <div class="navigationItem"><img src="navigation-2.png"><p>+7 (812) 210 67 95</p></div>
-    <div class="navigationItem"><img src="navigation-3.png" width="25px" height="25px"><p>hello@summerpalace.ru</p></div>
-</div>
-</div>
+        <div class="navigationItem"><img src="navigation-1.png" width="25px" height="30px">
+            <p>Санкт-Петербургское <br/> шоссе, д 130, к. 7</p>
+            <div class="navigationItem"><img src="navigation-2.png">
+                <p>+7 (812) 210 67 95</p></div>
+            <div class="navigationItem"><img src="navigation-3.png" width="25px" height="25px">
+                <p>hello@summerpalace.ru</p></div>
+        </div>
+    </div>
 
     <div class="navigation-2">
-    <span class="navigationText">ОФИС</span>
+        <span class="navigationText">ОФИС</span>
 
-    <div class="navigationItem"><img src="navigation-1.png" width="25px" height="30px"><p>ст. м. «Лиговский проспект», <br /> ул. Черняховского, д. 75</p>
-    <div class="navigationItem"><img src="navigation-2.png"><p>+7 (812) 210 67 95</p></div>
-    <div class="navigationItem"><img src="navigation-3.png" width="25px" height="25px"><p>hello@summerpalace.ru</p></div>
-    <button type="submit">ОТПРАВИТЬ</button>
-    </div>
+        <div class="navigationItem"><img src="navigation-1.png" width="25px" height="30px">
+            <p>ст. м. «Лиговский проспект», <br/> ул. Черняховского, д. 75</p>
+            <div class="navigationItem"><img src="navigation-2.png">
+                <p>+7 (812) 210 67 95</p></div>
+            <div class="navigationItem"><img src="navigation-3.png" width="25px" height="25px">
+                <p>hello@summerpalace.ru</p></div>
+            <button type="submit">ОТПРАВИТЬ</button>
         </div>
-            </div>
+    </div>
+</div>
 
 <div class="social">
     <h4>НАШ INSTAGRAM</h4>
-    <div class="socialLogo"><img src="summerPalace.png" height="30px" width="46"  alt="логотип"></div>
+    <div class="socialLogo"><img src="summerPalace.png" height="30px" width="46" alt="логотип"></div>
     <div><p>ЛЕТНИЙ ДВОРЕЦ</p></div>
-<div class="socPhoto">
-    <img  src="gallery-1.png" width="264px" height="254px">
-    <img  src="gallery-2.png" width="264px" height="254px">
-    <img  src="gallery-1.png" width="264px" height="254px">
-    <img  src="gallery-2.png" width="264px" height="254px">
-    <img  src="gallery-1.png" width="264px" height="254px">
-    <img  src="gallery-2.png" width="263px" height="254px">
-</div>
+    <div class="socPhoto">
+        <img src="gallery-1.png" width="264px" height="254px">
+        <img src="gallery-2.png" width="264px" height="254px">
+        <img src="gallery-1.png" width="264px" height="254px">
+        <img src="gallery-2.png" width="264px" height="254px">
+        <img src="gallery-1.png" width="264px" height="254px">
+        <img src="gallery-2.png" width="263px" height="254px">
+    </div>
 </div>
 
 <div class="copyright">
-<div class="copyright-text"><p>Copyright (с) 2019 Ресторан “Летний дворец”</p></div>
-<div class="copyright-social"><p>Facebook — 	Vkontakte — 	Instagram</p></div>
+    <div class="copyright-text"><p>Copyright (с) 2019 Ресторан “Летний дворец”</p></div>
+    <div class="copyright-social"><p>Facebook — Vkontakte — Instagram</p></div>
 </div>
 </body>
 </html>
